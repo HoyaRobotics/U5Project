@@ -47,4 +47,6 @@ public class ClimberConstants {
         .withForwardSoftLimitThreshold(0)
         .withReverseSoftLimitEnable(false)
         .withReverseSoftLimitThreshold(0.0);
+
+    public static final double positionError = 0.05;
 }

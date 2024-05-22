@@ -16,12 +16,14 @@ import frc.robot.generated.ClimberConstants;
 public class Climber extends SubsystemBase {
   private TalonFX climberMotor = new TalonFX (ClimberConstants.climberMotorCanID);
   /** Creates a new Climber. */ 
-  public Climber() {}
+  public Climber() {
+    configureMotor();
+  }
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-   configureMotor();
+   
     SmartDashboard.putNumber("climber", climberMotor.getPosition().getValueAsDouble());
  
   }// end periodic
@@ -46,5 +48,12 @@ public class Climber extends SubsystemBase {
     climberMotor.getConfigurator().apply(talonfxConfigs);
     climberMotor.setPosition(0.0);
   }
-
+public boolean isClimberAtPosition(double position){
+  double error = Math.abs(position - climberMotor.getPosition().getValue());
+  if (error < ClimberConstants.positionError){
+    return true;
+  } else{
+    return false;
+  }
+}
 }//end class
