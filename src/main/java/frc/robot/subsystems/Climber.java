@@ -24,6 +24,14 @@ public class Climber extends SubsystemBase {
     SmartDashboard.putNumber("climber", climberMotor.getPosition().getValueAsDouble());
  
   }// end periodic
+  public void moveClimber(double power){
+    climberMotor.set(power);
+  }
+
+  public void stopClimber(){
+    climberMotor.stopMotor();
+  }
+
   public void configureMotor(){
     climberMotor.getConfigurator().apply(new TalonFXConfiguration());
     var talonfxConfigs = new TalonFXConfiguration();
@@ -36,19 +44,6 @@ public class Climber extends SubsystemBase {
     talonfxConfigs.MotorOutput.NeutralMode = NeutralModeValue.Brake;
     climberMotor.getConfigurator().apply(talonfxConfigs);
     climberMotor.setPosition(0.0);
-    /*
-     *  rightClimberMotor.getConfigurator().apply(new TalonFXConfiguration());
-    var talonfxConfigs = new TalonFXConfiguration();
-    talonfxConfigs.Slot0 = ClimberConstants.climberSlot0Configs;
-    talonfxConfigs.CurrentLimits = ClimberConstants.climberCurrentLimits;
-    talonfxConfigs.Voltage = ClimberConstants.climberVoltageConfigs;
-    talonfxConfigs.Feedback = ClimberConstants.climberFeedbackConfigs;
-    talonfxConfigs.MotionMagic = ClimberConstants.climberMotionMagicConfigs;
-    talonfxConfigs.SoftwareLimitSwitch = ClimberConstants.climberSoftwareLimitSwitchConfigs;
-    talonfxConfigs.MotorOutput.NeutralMode = NeutralModeValue.Brake;
-    rightClimberMotor.getConfigurator().apply(talonfxConfigs);
-    rightClimberMotor.setPosition(0.0);
-     */
-
   }
+
 }//end class
