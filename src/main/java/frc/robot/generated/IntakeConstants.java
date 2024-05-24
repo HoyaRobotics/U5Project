@@ -20,8 +20,8 @@ public class IntakeConstants {
         .withGravityType(GravityTypeValue.Arm_Cosine)
         .withKG(0.0)
         .withKS(0.0)
-        .withKV(0.0)
-        .withKA(0.0)
+        .withKV(2.0491803279)
+        .withKA(0.4444444444)
         .withKP(0.0)
         .withKI(0.0)
         .withKD(0.0);
