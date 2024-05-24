@@ -6,17 +6,16 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 import com.ctre.phoenix6.configs.TalonFXConfiguration;
-import com.ctre.phoenix6.controls.MotionMagicVoltage;
+//import com.ctre.phoenix6.controls.MotionMagicVoltage;
 import com.ctre.phoenix6.hardware.TalonFX;
 import com.ctre.phoenix6.signals.NeutralModeValue;
-
 import frc.robot.generated.ElevatorConstants;
-import frc.robot.commands.MoveElevator;
 
 public class Elevator extends SubsystemBase {
+  private TalonFX elevatorMotor = new TalonFX(ElevatorConstants.elevatorMotorID);
   /** Creates a new Elevator. */
   public Elevator() {
-    configureMotorControllers();
+    configureElevatorMotor();
   }
 
   @Override
@@ -24,8 +23,8 @@ public class Elevator extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-  private void configureMotorControllers() {
-    leftElevatorMotor.getConfigurator().apply(new TalonFXConfiguration());
+  private void configureElevatorMotor() {
+   // leftElevatorMotor.getConfigurator().apply(new TalonFXConfiguration());
     //rightElevator.getConfigurator().apply(new TalonFXConfiguration());
     var talonfxConfigs = new TalonFXConfiguration();
     talonfxConfigs.Slot0 = ElevatorConstants.elevatorSlot0Configs;
@@ -35,10 +34,18 @@ public class Elevator extends SubsystemBase {
     talonfxConfigs.MotionMagic = ElevatorConstants.elevatorMotionMagicConfigs;
     talonfxConfigs.SoftwareLimitSwitch = ElevatorConstants.elevatorSoftwareLimitSwitchConfigs;
     talonfxConfigs.MotorOutput.NeutralMode = NeutralModeValue.Brake;
-    leftElevatorMotor.getConfigurator().apply(talonfxConfigs);
+    //leftElevatorMotor.getConfigurator().apply(talonfxConfigs);
     //rightElevator.getConfigurator().apply(talonfxConfigs);
-    leftElevatorMotor.setPosition(0.0);
+    //leftElevatorMotor.setPosition(0.0);
     //rightElevator.setPosition(0.0);
-    leftElevatorMotor.setInverted(true);
+    //leftElevatorMotor.setInverted(true);
+  }
+
+  public void moveElevator(double power){
+    elevatorMotor.set(-power);
+  }
+
+  public void stopElevator(){
+    elevatorMotor.stopMotor();
   }
 }

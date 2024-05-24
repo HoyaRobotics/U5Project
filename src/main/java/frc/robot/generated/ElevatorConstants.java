@@ -49,7 +49,7 @@ public class ElevatorConstants {
         .withReverseSoftLimitEnable(true)
         .withReverseSoftLimitThreshold(0.0);
 
-    public static final int leftElevatorMotorID = 26;
+    public static final int elevatorMotorID = 26;
     public static final double positionError = 0.05;
 
     //public static final double elevatorStowedPosition = 0.0;

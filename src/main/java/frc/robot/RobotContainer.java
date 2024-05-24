@@ -16,14 +16,14 @@ import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.generated.ShooterConstants;
 import frc.robot.generated.TunerConstants;
-import frc.robot.generated.ElevatorConstants;
+//import frc.robot.generated.ElevatorConstants;
 import frc.robot.subsystems.Climber;
 import frc.robot.subsystems.CommandSwerveDrivetrain;
 import frc.robot.commands.MoveClimber;
 import frc.robot.subsystems.Shooter;
 import frc.robot.commands.Shoot;
 import frc.robot.commands.MoveElevator;
-import frc.robot.subsytems.Elevator;
+import frc.robot.subsystems.Elevator;
 
 public class RobotContainer {
   private final Climber climber = new Climber();
@@ -69,7 +69,8 @@ public class RobotContainer {
 
 
     //SETS DRIVER CONTROLS
-    operatorController.x().whileTrue(new MoveClimber(climber, ()-> - operatorController.getLeftY()));
+    operatorController.a().whileTrue(new MoveClimber(climber, ()-> - operatorController.getLeftY()));
+    operatorController.x().whileTrue(new MoveElevator(elevator, ()-> operatorController.getLeftY()));
     joystick.leftTrigger().whileTrue(new Shoot(shooter, ShooterConstants.shootingRPM));
   }
 
