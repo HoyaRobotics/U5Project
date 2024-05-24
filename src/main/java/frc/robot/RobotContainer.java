@@ -16,15 +16,20 @@ import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.generated.ShooterConstants;
 import frc.robot.generated.TunerConstants;
+import frc.robot.generated.ElevatorConstants;
 import frc.robot.subsystems.Climber;
 import frc.robot.subsystems.CommandSwerveDrivetrain;
 import frc.robot.commands.MoveClimber;
 import frc.robot.subsystems.Shooter;
 import frc.robot.commands.Shoot;
+import frc.robot.commands.MoveElevator;
+import frc.robot.subsytems.Elevator;
 
 public class RobotContainer {
   private final Climber climber = new Climber();
   private final Shooter shooter = new Shooter();
+  private final Elevator elevator = new Elevator();
+  
   private double MaxSpeed = TunerConstants.kSpeedAt12VoltsMps; // kSpeedAt12VoltsMps desired top speed
   private double MaxAngularRate = 1.5 * Math.PI; // 3/4 of a rotation per second max angular velocity
 
