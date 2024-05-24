@@ -14,13 +14,17 @@ import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import frc.robot.generated.ShooterConstants;
 import frc.robot.generated.TunerConstants;
 import frc.robot.subsystems.Climber;
 import frc.robot.subsystems.CommandSwerveDrivetrain;
 import frc.robot.commands.MoveClimber;
+import frc.robot.subsystems.Shooter;
+import frc.robot.commands.Shoot;
 
 public class RobotContainer {
   private final Climber climber = new Climber();
+  private final Shooter shooter = new Shooter();
   private double MaxSpeed = TunerConstants.kSpeedAt12VoltsMps; // kSpeedAt12VoltsMps desired top speed
   private double MaxAngularRate = 1.5 * Math.PI; // 3/4 of a rotation per second max angular velocity
 
@@ -61,6 +65,7 @@ public class RobotContainer {
 
     //SETS DRIVER CONTROLS
     operatorController.x().whileTrue(new MoveClimber(climber, ()-> - operatorController.getLeftY()));
+    joystick.leftTrigger().whileTrue(new Shoot(shooter, ShooterConstants.shootingRPM));
   }
 
   public RobotContainer() {

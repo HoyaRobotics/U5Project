@@ -11,7 +11,6 @@ import com.ctre.phoenix6.signals.NeutralModeValue;
 
 import edu.wpi.first.wpilibj.PowerDistribution;
 import edu.wpi.first.wpilibj.PowerDistribution.ModuleType;
-//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.generated.ShooterConstants;
 //import monologue.LogLevel;
@@ -26,7 +25,7 @@ public class Shooter extends SubsystemBase {
   final VelocityVoltage voltageRequest = new VelocityVoltage(0);
   final PowerDistribution pdp = new PowerDistribution (1, ModuleType.kRev);
 
-  //private boolean upToSpeed = false;
+  private boolean upToSpeed = false;
 
   double leftShooterSpeed;
   double rightShooterSpeed;
@@ -62,9 +61,29 @@ public class Shooter extends SubsystemBase {
     shootRight.setInverted(true);
   }
 
+public void setShooterSpeeds(double RPM,double spinFactor){
+   shootLeft.setControl(voltageRequest.withVelocity(RPM*(1-spinFactor)/60));
+   shootRight.setControl(voltageRequest.withVelocity(RPM*(1+spinFactor)/60));
+}
+
   public void setShooterSpeeds(){
-    //shootLeft.setControl(voltageRequest.withVelocity(ShooterConstants.shootingRPM*(1-ShooterConstants.spinFactor)/60));
-    //shootRight.setControl(voltageRequest.withVelocity(ShooterConstants.shootingRPM*(1+ShooterConstants.spinFactor)/60));
+    shootLeft.setControl(voltageRequest.withVelocity(ShooterConstants.shootingRPM*(1-ShooterConstants.spinFactor)/60));
+    shootRight.setControl(voltageRequest.withVelocity(ShooterConstants.shootingRPM*(1+ShooterConstants.spinFactor)/60));
+  }
+
+  public void stopShooter(){
+    shootLeft.stopMotor();
+    shootRight.stopMotor();
+    upToSpeed = false;
+  }
+
+  public double getAverageRPM(){
+    return(shootLeft.getVelocity().getValue()+shootRight.getVelocity().getValue()*30);
+  }
+
+  public boolean isShooterAtSpeed(double setSpeed){
+    if(getAverageRPM() >= ShooterConstants.speedThreshold*setSpeed) upToSpeed = true;
+    return upToSpeed;
   }
 
 }
