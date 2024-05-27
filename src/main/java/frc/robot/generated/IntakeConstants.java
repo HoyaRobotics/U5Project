@@ -18,9 +18,9 @@ public class IntakeConstants {
     public static final double rotationGearRatio = 45.7143;
     public static final Slot0Configs rotationSlot0Configs = new Slot0Configs()
         .withGravityType(GravityTypeValue.Arm_Cosine)
-        .withKG(0.0)
-        .withKS(0.0)
-        .withKV(2.0491803279)
+        .withKG(0.35)
+        .withKS(0.16)
+        .withKV(5.119453924)
         .withKA(0.4444444444)
         .withKP(0.0)
         .withKI(0.0)
