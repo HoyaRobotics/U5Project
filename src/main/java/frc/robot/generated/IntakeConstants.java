@@ -45,4 +45,5 @@ public class IntakeConstants {
         .withForwardSoftLimitThreshold(0)
         .withReverseSoftLimitEnable(false)
         .withReverseSoftLimitThreshold(0.0);
+        public static final double homePosition = 0.449;
 }
