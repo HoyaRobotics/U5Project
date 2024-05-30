@@ -19,16 +19,19 @@ import frc.robot.generated.TunerConstants;
 //import frc.robot.generated.ElevatorConstants;
 import frc.robot.subsystems.Climber;
 import frc.robot.subsystems.CommandSwerveDrivetrain;
+import frc.robot.commands.IntakeFromGround;
 import frc.robot.commands.MoveClimber;
 import frc.robot.subsystems.Shooter;
 import frc.robot.commands.Shoot;
 import frc.robot.commands.MoveElevator;
 import frc.robot.subsystems.Elevator;
+import frc.robot.subsystems.Intake;
 
 public class RobotContainer {
   private final Climber climber = new Climber();
   private final Shooter shooter = new Shooter();
   private final Elevator elevator = new Elevator();
+  private final Intake intake = new Intake();
   
   private double MaxSpeed = TunerConstants.kSpeedAt12VoltsMps; // kSpeedAt12VoltsMps desired top speed
   private double MaxAngularRate = 1.5 * Math.PI; // 3/4 of a rotation per second max angular velocity
@@ -72,6 +75,7 @@ public class RobotContainer {
     operatorController.a().whileTrue(new MoveClimber(climber, ()-> - operatorController.getLeftY()));
     operatorController.x().whileTrue(new MoveElevator(elevator, ()-> operatorController.getLeftY()));
     joystick.leftTrigger().whileTrue(new Shoot(shooter, ShooterConstants.shootingRPM));
+    joystick.rightTrigger().whileTrue(new IntakeFromGround(intake));
   }
 
   public RobotContainer() {

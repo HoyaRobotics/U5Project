@@ -22,7 +22,7 @@ public class IntakeConstants {
         .withKS(0.16)
         .withKV(5.119453924)
         .withKA(0.4444444444)
-        .withKP(0.0)
+        .withKP(25.0)
         .withKI(0.0)
         .withKD(0.0);
     public static final CurrentLimitsConfigs rotationCurrentLimits = new CurrentLimitsConfigs()
@@ -35,8 +35,8 @@ public class IntakeConstants {
         .withFeedbackSensorSource(FeedbackSensorSourceValue.RotorSensor)
         .withSensorToMechanismRatio(rotationGearRatio);
     public static final MotionMagicConfigs rotationMotionMagicConfigs = new MotionMagicConfigs()
-        .withMotionMagicAcceleration(0.0)
-        .withMotionMagicCruiseVelocity(0.0)
+        .withMotionMagicAcceleration(5.0)
+        .withMotionMagicCruiseVelocity(1.0)
         .withMotionMagicExpo_kA(0.0)
         .withMotionMagicExpo_kV(0)
         .withMotionMagicJerk(0.0);
@@ -46,4 +46,11 @@ public class IntakeConstants {
         .withReverseSoftLimitEnable(false)
         .withReverseSoftLimitThreshold(0.0);
         public static final double homePosition = 0.449;
+        public static final double floorPosition = -0.112;
+        public static final int rollerMotorCurrentLimit = 60;
+        public static final double stallSpeed = 0;
+        public static final double floorSpeed = 0.75;
+        public static final double shootSpeed = -1.0;
+        public static final double positionError = 0.01;
+
 }
