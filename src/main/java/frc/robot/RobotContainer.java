@@ -74,7 +74,7 @@ public class RobotContainer {
     //SETS DRIVER CONTROLS
     operatorController.a().whileTrue(new MoveClimber(climber, ()-> - operatorController.getLeftY()));
     operatorController.x().whileTrue(new MoveElevator(elevator, ()-> operatorController.getLeftY()));
-    joystick.leftTrigger().whileTrue(new Shoot(shooter, ShooterConstants.shootingRPM));
+    joystick.leftTrigger().whileTrue(new Shoot(shooter, intake, ShooterConstants.shootingRPM));
     joystick.rightTrigger().whileTrue(new IntakeFromGround(intake));
   }
 

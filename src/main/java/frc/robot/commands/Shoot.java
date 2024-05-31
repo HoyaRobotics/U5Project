@@ -17,7 +17,7 @@ public class Shoot extends Command {
   double speed;
 
   /** Creates a new Shoot. */
-  public Shoot(Shooter shooter, double speed) {
+  public Shoot(Shooter shooter, Intake intake, double speed) {
     this.shooter = shooter;
     this.speed = speed;
     this.intake = intake; 
