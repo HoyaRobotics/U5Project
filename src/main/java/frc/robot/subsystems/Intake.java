@@ -18,7 +18,7 @@ import frc.robot.generated.IntakeConstants;
 public class Intake extends SubsystemBase {
 
   private final TalonFX rotationMotor = new TalonFX(22);
-  private final CANSparkFlex rollerMotor = new CANSparkFlex(23, MotorType.kBrushless);
+  private final static CANSparkFlex rollerMotor = new CANSparkFlex(23, MotorType.kBrushless);
   /** Creates a new Intake. */
 private final MotionMagicVoltage magicRequest = new MotionMagicVoltage(0);
 
@@ -59,7 +59,7 @@ private final MotionMagicVoltage magicRequest = new MotionMagicVoltage(0);
   public void stopPosition(){
     rotationMotor.stopMotor();
   }
-  public void setRollerSpeed(double speed){
+  public static void setRollerSpeed(double speed){
     rollerMotor.set(speed);
   }
   public void stopRoller(){
