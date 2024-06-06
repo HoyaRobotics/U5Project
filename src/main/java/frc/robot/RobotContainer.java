@@ -6,13 +6,16 @@ package frc.robot;
 
 import com.ctre.phoenix6.Utils;
 import com.ctre.phoenix6.mechanisms.swerve.SwerveRequest;
+import com.pathplanner.lib.auto.AutoBuilder;
+import com.pathplanner.lib.auto.NamedCommands;
 import com.ctre.phoenix6.mechanisms.swerve.SwerveModule.DriveRequestType;
 
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.geometry.Translation2d;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.generated.ShooterConstants;
 import frc.robot.generated.TunerConstants;
@@ -28,6 +31,7 @@ import frc.robot.subsystems.Elevator;
 import frc.robot.subsystems.Intake;
 
 public class RobotContainer {
+  private final SendableChooser<Command> autoChooser;
   private final Climber climber = new Climber();
   private final Shooter shooter = new Shooter();
   private final Elevator elevator = new Elevator();
@@ -79,10 +83,13 @@ public class RobotContainer {
   }
 
   public RobotContainer() {
+    autoChooser = AutoBuilder.buildAutoChooser();
     configureBindings();
+     SmartDashboard.putData("Auto #", autoChooser);
+     NamedCommands.registerCommand("Shoot", new Shoot(shooter, intake, ShooterConstants.shootingRPM));
   }
 
   public Command getAutonomousCommand() {
-    return Commands.print("No autonomous command configured");
+    return autoChooser.getSelected();
   }
 }

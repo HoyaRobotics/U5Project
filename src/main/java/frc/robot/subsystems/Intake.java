@@ -20,7 +20,7 @@ public class Intake extends SubsystemBase {
   private final TalonFX rotationMotor = new TalonFX(22);
   private final static CANSparkFlex rollerMotor = new CANSparkFlex(23, MotorType.kBrushless);
   /** Creates a new Intake. */
-private final MotionMagicVoltage magicRequest = new MotionMagicVoltage(0);
+  private final MotionMagicVoltage magicRequest = new MotionMagicVoltage(0);
 
   public Intake() {
     configureRotationMotor();
