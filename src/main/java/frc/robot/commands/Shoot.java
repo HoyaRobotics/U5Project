@@ -8,7 +8,6 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Intake;
 import frc.robot.generated.IntakeConstants;
-//import frc.robot.generated.ShooterConstants;
 import frc.robot.generated.ShooterConstants;
 
 public class Shoot extends Command {
@@ -22,7 +21,7 @@ public class Shoot extends Command {
     this.speed = speed;
     this.intake = intake; 
     // Use addRequirements() here to declare subsystem dependencies.
-    //addRequirements(shooter);
+    addRequirements(shooter, intake);
   }
 
   // Called when the command is initially scheduled.
@@ -37,8 +36,9 @@ public class Shoot extends Command {
   public void execute() {
 
   if(shooter.isShooterAtSpeed(ShooterConstants.shootingRPM)&& intake.isIntakeAtPosition(IntakeConstants.homePosition)){
-    Intake.setRollerSpeed(IntakeConstants.shootSpeed);
+    intake.setRollerSpeed(IntakeConstants.shootSpeed);
   }
+   else {System.out.println("NOT TO SPEED");}
 }
 
 
@@ -46,6 +46,8 @@ public class Shoot extends Command {
   @Override
   public void end(boolean interrupted) {
     shooter.stopShooter();
+    intake.setIntakePosition(IntakeConstants.homePosition);
+    intake.setRollerSpeed(IntakeConstants.stallSpeed);
   }
 
 

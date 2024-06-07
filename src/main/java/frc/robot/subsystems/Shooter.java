@@ -29,8 +29,7 @@ public class Shooter extends SubsystemBase {
 
   double leftShooterSpeed;
   double rightShooterSpeed;
-
-  /*@Log.File(level = LogLevel.DEFAULT) double leftShooterSpeed;
+ /* @Log.File(level = LogLevel.DEFAULT) double leftShooterSpeed;
   @Log.File(level = LogLevel.DEFAULT) double rightShooterSpeed;
   @Log.File(level = LogLevel.DEFAULT) double leftShooterSetpoint;
   @Log.File(level = LogLevel.DEFAULT) double rightShooterSetpoint;
@@ -62,7 +61,7 @@ public class Shooter extends SubsystemBase {
     shootRight.setInverted(true);
   }
 
-public void setShooterSpeeds(double RPM,double spinFactor){
+public void setShooterSpeeds(double RPM, double spinFactor){
    shootLeft.setControl(voltageRequest.withVelocity(RPM*(1-spinFactor)/60));
    shootRight.setControl(voltageRequest.withVelocity(RPM*(1+spinFactor)/60));
 }
@@ -72,6 +71,11 @@ public void setShooterSpeeds(double RPM,double spinFactor){
     shootRight.setControl(voltageRequest.withVelocity(ShooterConstants.shootingRPM*(1+ShooterConstants.spinFactor)/60));
   }
 
+  public void setIndividualSpeeds(double RPMLeft, double RPMRight){
+    shootLeft.setControl(voltageRequest.withVelocity(RPMLeft/60));
+    shootRight.setControl(voltageRequest.withVelocity(RPMRight/60));
+  }
+
   public void stopShooter(){
     shootLeft.stopMotor();
     shootRight.stopMotor();
@@ -79,11 +83,13 @@ public void setShooterSpeeds(double RPM,double spinFactor){
   }
 
   public double getAverageRPM(){
-    return(shootLeft.getVelocity().getValue()+shootRight.getVelocity().getValue()*30);
+    return(shootLeft.getVelocity().getValue()+shootRight.getVelocity().getValue())*30;
   }
 
   public boolean isShooterAtSpeed(double setSpeed){
-    if(getAverageRPM() >= ShooterConstants.speedThreshold*setSpeed) upToSpeed = true;
+    if(getAverageRPM() >= ShooterConstants.speedThreshold*setSpeed) {
+      upToSpeed = true;
+    }
     return upToSpeed;
   }
 

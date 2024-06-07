@@ -60,7 +60,7 @@ public class Intake extends SubsystemBase {
   public void stopPosition(){
     rotationMotor.stopMotor();
   }
-  public static void setRollerSpeed(double speed){
+  public void setRollerSpeed(double speed){
     rollerMotor.set(speed);
   }
   public void stopRoller(){
