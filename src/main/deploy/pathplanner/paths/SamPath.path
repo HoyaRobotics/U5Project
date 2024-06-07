@@ -1,0 +1,52 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 1.3136774325496698,
+        "y": 5.59724755813148
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 1.9933432074656354,
+        "y": 5.557267218430541
+      },
+      "isLocked": false,
+      "linkedName": "SophiaPathEnd"
+    },
+    {
+      "anchor": {
+        "x": 3.512596116101323,
+        "y": 5.59724755813148
+      },
+      "prevControl": {
+        "x": 2.512596116101323,
+        "y": 5.59724755813148
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 4.35,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 90.0,
+    "maxAngularAcceleration": 360.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 0,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": null,
+  "previewStartingState": {
+    "rotation": -1.7963398678496772e-10,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}

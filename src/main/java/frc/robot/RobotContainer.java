@@ -22,6 +22,7 @@ import frc.robot.generated.TunerConstants;
 //import frc.robot.generated.ElevatorConstants;
 import frc.robot.subsystems.Climber;
 import frc.robot.subsystems.CommandSwerveDrivetrain;
+import frc.robot.AutoCommands.AutoShoot;
 import frc.robot.commands.IntakeFromGround;
 import frc.robot.commands.MoveClimber;
 import frc.robot.subsystems.Shooter;
@@ -86,7 +87,7 @@ public class RobotContainer {
     autoChooser = AutoBuilder.buildAutoChooser();
     configureBindings();
      SmartDashboard.putData("Auto #", autoChooser);
-     NamedCommands.registerCommand("Shoot", new Shoot(shooter, intake, ShooterConstants.shootingRPM));
+     NamedCommands.registerCommand("Shoot", new AutoShoot(shooter, intake, ShooterConstants.shootingRPM));
   }
 
   public Command getAutonomousCommand() {

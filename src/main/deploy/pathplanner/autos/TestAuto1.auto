@@ -2,8 +2,8 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 1.3949707899415804,
-      "y": 5.673210203563265
+      "x": 2.0,
+      "y": 5.394680503646721
     },
     "rotation": 1.0230301886677693
   },
@@ -15,6 +15,12 @@
           "type": "path",
           "data": {
             "pathName": "SophiaPath"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": null
           }
         }
       ]
