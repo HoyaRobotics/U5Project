@@ -16,6 +16,7 @@ import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.PrintCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.generated.ShooterConstants;
 import frc.robot.generated.TunerConstants;
@@ -89,9 +90,15 @@ public class RobotContainer {
     autoChooser = AutoBuilder.buildAutoChooser();
     configureBindings();
      SmartDashboard.putData("Auto #", autoChooser);
-     NamedCommands.registerCommand("Shoot", new AutoShoot(shooter, intake, ShooterConstants.shootingRPM));
-     NamedCommands.registerCommand("IntakeStart", new IntakeStart(intake));
-     NamedCommands.registerCommand("IntakeStop", new IntakeEnd(intake));
+     NamedCommands.registerCommand("manuelShoot", new AutoShoot(shooter, intake, ShooterConstants.shootingRPM));
+     NamedCommands.registerCommand("startIntake", new IntakeStart(intake));
+     NamedCommands.registerCommand("stopIntake", new IntakeEnd(intake));
+
+    NamedCommands.registerCommand("autoShoot", new PrintCommand("autoShootComp"));
+    NamedCommands.registerCommand("autoIntake", new PrintCommand("autoIntakeComp"));
+    NamedCommands.registerCommand("autoShootAlign", new PrintCommand("autoShootAlignComp"));
+    NamedCommands.registerCommand("autoAlign", new PrintCommand("AutoAlignComp"));
+    NamedCommands.registerCommand("deflect", new PrintCommand("deflectComp"));
   }
 
   public Command getAutonomousCommand() {
