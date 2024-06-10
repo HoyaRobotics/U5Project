@@ -23,6 +23,8 @@ import frc.robot.generated.TunerConstants;
 import frc.robot.subsystems.Climber;
 import frc.robot.subsystems.CommandSwerveDrivetrain;
 import frc.robot.AutoCommands.AutoShoot;
+import frc.robot.AutoCommands.IntakeStart;
+import frc.robot.AutoCommands.IntakeEnd;
 import frc.robot.commands.IntakeFromGround;
 import frc.robot.commands.MoveClimber;
 import frc.robot.subsystems.Shooter;
@@ -88,6 +90,8 @@ public class RobotContainer {
     configureBindings();
      SmartDashboard.putData("Auto #", autoChooser);
      NamedCommands.registerCommand("Shoot", new AutoShoot(shooter, intake, ShooterConstants.shootingRPM));
+     NamedCommands.registerCommand("IntakeStart", new IntakeStart(intake));
+     NamedCommands.registerCommand("IntakeStop", new IntakeEnd(intake));
   }
 
   public Command getAutonomousCommand() {
