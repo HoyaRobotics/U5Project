@@ -1,0 +1,67 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 1.3363329583802028,
+      "y": 5.52661562465982
+    },
+    "rotation": 0
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "SophPath1"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "manuelShoot"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "SophPath2"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "manuelShoot"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "SophPath3"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "manuelShoot"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "SophPath4"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "manuelShoot"
+          }
+        }
+      ]
+    }
+  },
+  "folder": null,
+  "choreoAuto": false
+}

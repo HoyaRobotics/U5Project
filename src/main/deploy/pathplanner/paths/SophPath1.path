@@ -1,0 +1,52 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 1.3363329583802028,
+        "y": 5.52661562465982
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 1.4682680793933023,
+        "y": 6.464820929641859
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 2.890235494756704,
+        "y": 6.244929061286694
+      },
+      "prevControl": {
+        "x": 1.9373707318843216,
+        "y": 6.083675024492907
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "SophPathEndV1"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 4.35,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 90.0,
+    "maxAngularAcceleration": 360.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 11.976132444203392,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": null,
+  "previewStartingState": {
+    "rotation": 0,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}
