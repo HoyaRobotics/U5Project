@@ -9,7 +9,7 @@ import frc.robot.subsystems.Intake;
 import frc.robot.generated.IntakeConstants;
 
 public class IntakeStart extends Command {
-  Intake intake;
+ private final Intake intake;
 
   /** Creates a new IntakeStart. */
   public IntakeStart(Intake intake) {
@@ -36,6 +36,6 @@ public class IntakeStart extends Command {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return true;
+    return false;
   }
 }

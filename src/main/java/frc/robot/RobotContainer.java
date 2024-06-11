@@ -87,9 +87,7 @@ public class RobotContainer {
   }
 
   public RobotContainer() {
-    autoChooser = AutoBuilder.buildAutoChooser();
     configureBindings();
-     SmartDashboard.putData("Auto #", autoChooser);
      NamedCommands.registerCommand("manuelShoot", new AutoShoot(shooter, intake, ShooterConstants.shootingRPM));
      NamedCommands.registerCommand("startIntake", new IntakeStart(intake));
      NamedCommands.registerCommand("stopIntake", new IntakeEnd(intake));
@@ -99,6 +97,8 @@ public class RobotContainer {
     NamedCommands.registerCommand("autoShootAlign", new PrintCommand("autoShootAlignComp"));
     NamedCommands.registerCommand("autoAlign", new PrintCommand("AutoAlignComp"));
     NamedCommands.registerCommand("deflect", new PrintCommand("deflectComp"));
+    autoChooser = AutoBuilder.buildAutoChooser();
+    SmartDashboard.putData("Auto Chooser", autoChooser);
   }
 
   public Command getAutonomousCommand() {
