@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.9928516999891146,
-        "y": 7.051199245255634
+        "x": 2.904894952647049,
+        "y": 7.124496534707355
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.3216735004898583,
-        "y": 6.684712797997025
+        "x": 1.2630356689284816,
+        "y": 6.186291229725317
       },
       "isLocked": false,
       "linkedName": "SophPathEnd2"
     },
     {
       "anchor": {
-        "x": 3.007511157879459,
-        "y": 5.541275082550166
+        "x": 2.9928516999891146,
+        "y": 5.42399941942741
       },
       "prevControl": {
-        "x": 1.6002032004064008,
-        "y": 5.248085924743279
+        "x": 1.4389491636126137,
+        "y": 5.306723756304655
       },
       "nextControl": null,
       "isLocked": false,
@@ -31,7 +31,7 @@
   "rotationTargets": [
     {
       "waypointRelativePos": 0.5,
-      "rotationDegrees": -11.45875234587719,
+      "rotationDegrees": -6.0837923787368196,
       "rotateFast": false
     }
   ],
@@ -70,7 +70,7 @@
             {
               "type": "wait",
               "data": {
-                "waitTime": 0.25
+                "waitTime": 1.0
               }
             }
           ]

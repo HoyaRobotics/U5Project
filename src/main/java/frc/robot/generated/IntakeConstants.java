@@ -51,6 +51,6 @@ public class IntakeConstants {
         public static final double stallSpeed = 0;
         public static final double floorSpeed = 0.75;
         public static final double shootSpeed = -1.0;
-        public static final double positionError = 0.05;
+        public static final double positionError = 0.015;
 
 }

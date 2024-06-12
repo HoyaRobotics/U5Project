@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.890235494756704,
-        "y": 6.244929061286694
+        "x": 2.904894952647049,
+        "y": 6.274247977067383
       },
       "prevControl": null,
       "nextControl": {
-        "x": 0.8965492216698724,
-        "y": 5.687869661453608
+        "x": 0.4714249428498863,
+        "y": 6.420842555970827
       },
       "isLocked": false,
       "linkedName": "SophPathEndV1"
     },
     {
       "anchor": {
-        "x": 2.9928516999891146,
-        "y": 7.051199245255634
+        "x": 2.904894952647049,
+        "y": 7.124496534707355
       },
       "prevControl": {
-        "x": 2.274538263362241,
-        "y": 6.479480387532205
+        "x": 1.8494139845422557,
+        "y": 6.772669545339092
       },
       "nextControl": null,
       "isLocked": false,
@@ -31,7 +31,7 @@
   "rotationTargets": [
     {
       "waypointRelativePos": 0.4,
-      "rotationDegrees": 40.37849303896163,
+      "rotationDegrees": 24.267192480215154,
       "rotateFast": false
     },
     {
@@ -61,7 +61,7 @@
     },
     {
       "name": "New Event Marker",
-      "waypointRelativePos": 0.85,
+      "waypointRelativePos": 0.9,
       "command": {
         "type": "sequential",
         "data": {
@@ -75,7 +75,7 @@
             {
               "type": "wait",
               "data": {
-                "waitTime": 0.25
+                "waitTime": 1.0
               }
             }
           ]
@@ -97,7 +97,7 @@
   "reversed": false,
   "folder": null,
   "previewStartingState": {
-    "rotation": 0,
+    "rotation": 5.7105931374997345,
     "velocity": 0
   },
   "useDefaultConstraints": true
