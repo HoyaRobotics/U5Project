@@ -3,13 +3,13 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.904894952647049,
-        "y": 7.124496534707355
+        "x": 3.036830073660148,
+        "y": 7.036539787365289
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.2630356689284816,
-        "y": 6.186291229725317
+        "x": 0.8525708479988394,
+        "y": 6.186291229725318
       },
       "isLocked": false,
       "linkedName": "SophPathEnd2"
@@ -39,7 +39,7 @@
   "eventMarkers": [
     {
       "name": "New Event Marker",
-      "waypointRelativePos": 0.4,
+      "waypointRelativePos": 0.3,
       "command": {
         "type": "sequential",
         "data": {

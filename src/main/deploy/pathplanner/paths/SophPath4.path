@@ -8,8 +8,8 @@
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.673500489858123,
-        "y": 5.174788635291557
+        "x": 1.6148626582967456,
+        "y": 5.658550745672921
       },
       "isLocked": false,
       "linkedName": "SophPathEnd3"
@@ -20,8 +20,8 @@
         "y": 4.104648209296419
       },
       "prevControl": {
-        "x": 1.9520301897746657,
-        "y": 4.353858993432273
+        "x": 1.3070140425995143,
+        "y": 4.529772488116405
       },
       "nextControl": null,
       "isLocked": false,
@@ -44,7 +44,7 @@
   "eventMarkers": [
     {
       "name": "New Event Marker",
-      "waypointRelativePos": 0.45,
+      "waypointRelativePos": 0.2,
       "command": {
         "type": "sequential",
         "data": {
@@ -61,7 +61,7 @@
     },
     {
       "name": "New Event Marker",
-      "waypointRelativePos": 0.9,
+      "waypointRelativePos": 0.95,
       "command": {
         "type": "sequential",
         "data": {
